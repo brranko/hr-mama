@@ -37,16 +37,18 @@ export default function CinematicHero() {
     return (
         <section ref={container} className="relative w-full h-[100dvh] overflow-hidden bg-obsidian flex items-end">
 
-            {/* Background Layer */}
-            <div className="absolute inset-0 z-0">
-                <img
-                    src="/abstract-hr.png"
-                    alt="Abstract HR Essence"
-                    className="hero-bg-img w-full h-full object-cover object-[center_30%] opacity-80"
-                />
-                {/* Heavy gradient overlay pushed to black at the bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/60 to-transparent"></div>
-                <div className="absolute inset-0 bg-obsidian/20 mix-blend-multiply"></div>
+            {/* Background Layer: Portrait Image */}
+            <div className="absolute inset-0 z-0 flex justify-end">
+                <div className="relative w-full md:w-[60%] h-full">
+                    <img
+                        src="/malin-bw.jpg"
+                        alt="Malin Markén Portrait"
+                        className="hero-bg-img w-full h-full object-cover object-[center_30%] opacity-80"
+                    />
+                    {/* Mobile: Bottom-up gradient fade. Desktop: Heavy left-to-right gradient fade into black */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent md:bg-none"></div>
+                    <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-obsidian via-obsidian/90 to-transparent w-[120%] -ml-[20%]"></div>
+                </div>
             </div>
 
             {/* Content Layer */}

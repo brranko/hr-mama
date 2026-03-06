@@ -39,9 +39,9 @@ export default function Manifesto() {
             {/* Dark Texture Parallax Bg */}
             <div className="absolute inset-0 z-0 overflow-hidden">
                 <img
-                    src="/malin-bw.jpg"
-                    alt="Texture"
-                    className="manifesto-bg w-full h-[130%] object-cover object-center opacity-10 filter grayscale"
+                    src="/abstract-hr.png"
+                    alt="Abstract HR Essence"
+                    className="manifesto-bg w-full h-[130%] object-cover object-[center_40%] opacity-[0.15] filter grayscale"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-obsidian via-transparent to-obsidian"></div>
             </div>
