@@ -69,7 +69,7 @@ export default function CinematicHero() {
                     </p>
 
                     <div className="hero-cta mt-12 flex items-center gap-6">
-                        <a href="#services" className="btn-magnetic bg-terracotta text-obsidian border-none hover:text-obsidian">
+                        <a href="#services" className="btn-magnetic px-8 py-4 rounded-[2rem] bg-terracotta text-obsidian border-none hover:text-obsidian">
                             <span>See the protocol ↓</span>
                         </a>
                     </div>

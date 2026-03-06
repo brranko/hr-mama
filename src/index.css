@@ -12,7 +12,7 @@
 
   /* Magnetic Button System */
   .btn-magnetic {
-    @apply relative overflow-hidden rounded-[2rem] px-8 py-4 font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-95;
+    @apply relative overflow-hidden font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-95;
     transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
