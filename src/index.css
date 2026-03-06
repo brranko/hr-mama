@@ -1,168 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  /* Ultra Premium Dark Theme */
-  --bg-primary: #121010;
-  --bg-secondary: #0a0a0a;
-  --bg-tertiary: #1a1818;
-
-  /* Accent - Terracotta from design reference */
-  --accent-primary: #d68d71;
-  --accent-secondary: #eab49e;
-  --accent-glow: rgba(214, 141, 113, 0.15);
-
-  /* Typography */
-  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --text-primary: #ffffff;
-  --text-secondary: #888888;
-  --text-tertiary: #444444;
-
-  /* Structural & Utils */
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-accent: rgba(232, 165, 152, 0.2);
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-full: 9999px;
-  --max-width: 1400px;
-
-  /* Easing Custom */
-  --expo: cubic-bezier(0.19, 1, 0.22, 1);
+@layer base {
+  body {
+    @apply bg-obsidian text-ivory font-sans antialiased selection:bg-terracotta selection:text-obsidian overflow-x-hidden;
+  }
 }
 
-html {
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-}
+@layer components {
 
-body::-webkit-scrollbar {
-  display: none;
-}
+  /* Magnetic Button System */
+  .btn-magnetic {
+    @apply relative overflow-hidden rounded-[2rem] px-8 py-4 font-sans font-semibold tracking-wide transition-all duration-300 hover:scale-[1.03] active:scale-95;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  .btn-magnetic span {
+    @apply relative z-10;
+  }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-  overscroll-behavior: none;
-  /* Prevents bounce effects on Mac */
-}
+  .btn-magnetic::before {
+    content: '';
+    @apply absolute inset-0 bg-terracotta translate-y-[100%] transition-transform duration-500 ease-out z-0;
+  }
 
-/* Typography Utilities */
-.font-serif {
-  font-family: var(--font-serif);
-}
+  .btn-magnetic:hover::before {
+    @apply translate-y-0;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
+  .btn-primary {
+    @apply border border-terracotta/30 text-terracotta;
+  }
 
-a {
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: color 0.3s var(--expo);
-}
+  .btn-primary:hover {
+    @apply text-obsidian border-transparent;
+  }
 
-a:hover {
-  color: var(--accent-primary);
-}
-
-/* Global Utilities */
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 5vw;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, var(--text-primary) 0%, rgba(255, 255, 255, 0.4) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.accent-gradient {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.glass-panel {
-  background: rgba(10, 10, 10, 0.5);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-}
-
-/* Button Reset */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  border-radius: var(--radius-full);
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.4s var(--expo);
-  cursor: pointer;
-  border: none;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: var(--text-primary);
-  color: var(--bg-primary);
-}
-
-.btn-primary:hover {
-  background: var(--accent-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px var(--accent-glow);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border-subtle);
-}
-
-.btn-secondary:hover {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
-}
-
-/* SOTA Load mask */
-.loading-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  background: var(--bg-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-origin: top;
+  /* Structural Components */
+  .glass-panel {
+    @apply bg-slate/10 backdrop-blur-xl border border-white/5 shadow-2xl;
+  }
 }
