@@ -43,16 +43,16 @@ export default function CinematicHero() {
                     <img
                         src="/malin-bw.jpg"
                         alt="Malin Markén Portrait"
-                        className="hero-bg-img w-full h-full object-cover object-[center_top] md:object-[center_30%] opacity-80"
+                        className="hero-bg-img w-full h-full object-cover object-[center_top] md:object-[center_30%] opacity-90"
                     />
-                    {/* Mobile: Bottom-up gradient fade covering only the bottom 65%. Desktop: Heavy left-to-right gradient fade into black */}
-                    <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent md:inset-0 md:h-full md:bg-none"></div>
+                    {/* Mobile: Bottom-up gradient fade covering only the bottom 50%. Desktop: Heavy left-to-right gradient fade into black */}
+                    <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-obsidian via-obsidian/95 to-transparent md:inset-0 md:h-full md:bg-none"></div>
                     <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-obsidian via-obsidian/90 to-transparent w-[120%] -ml-[20%]"></div>
                 </div>
             </div>
 
             {/* Content Layer */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 md:pb-32 flex flex-col items-start justify-end">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-[45dvh] pb-12 flex flex-col items-start justify-end md:pt-0 md:pb-32">
                 <div className="max-w-3xl">
 
                     <h1 className="flex flex-col gap-2">
