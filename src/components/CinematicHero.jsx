@@ -43,10 +43,10 @@ export default function CinematicHero() {
                     <img
                         src="/malin-bw.jpg"
                         alt="Malin Markén Portrait"
-                        className="hero-bg-img w-full h-full object-cover object-[center_30%] opacity-80"
+                        className="hero-bg-img w-full h-full object-cover object-[center_top] md:object-[center_30%] opacity-80"
                     />
-                    {/* Mobile: Bottom-up gradient fade. Desktop: Heavy left-to-right gradient fade into black */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent md:bg-none"></div>
+                    {/* Mobile: Bottom-up gradient fade covering only the bottom 65%. Desktop: Heavy left-to-right gradient fade into black */}
+                    <div className="absolute inset-x-0 bottom-0 h-[65%] bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent md:inset-0 md:h-full md:bg-none"></div>
                     <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-obsidian via-obsidian/90 to-transparent w-[120%] -ml-[20%]"></div>
                 </div>
             </div>
